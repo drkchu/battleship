@@ -11,7 +11,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: "./src/assets/img/mostly_sunny.png",
+      favicon: "./src/assets/img/ship.png",
       template: "./src/index.html",
     }),
   ],
