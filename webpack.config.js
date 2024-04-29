@@ -11,7 +11,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      favicon: "./src/assets/img/ship.png",
+      favicon: "./src/assets/img/ship.png", // This the lil icon that shows up beside the tab
       template: "./src/index.html",
     }),
   ],
