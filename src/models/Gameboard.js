@@ -1,8 +1,8 @@
 // Gameboard for my battleship game
 
 class Gameboard {
-    constructor() {
-        this.grid = this.createGrid();
+    constructor(size = 10) {
+        this.grid = this.createGrid(size);
         this.ships = []; // Stores a list of ships along with the coordinates the ship occupies
         this.missedAttacks = [];
       }

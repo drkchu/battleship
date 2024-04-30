@@ -85,7 +85,6 @@ describe('Gameboard', () => {
             expect(ship.hits[2]).toBeTruthy();
             
             expect(ship.isSunk()).toBeTruthy();
-            console.log(gameboard.ships);
         });
 
     });
