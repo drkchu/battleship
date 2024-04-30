@@ -8,12 +8,12 @@ class Gameboard {
       }
 
       // Initialize a n x n grid, defaults to 10 x 10
-      createGrid(size = 10) {
+    createGrid(size = 10) {
         return Array.from({ length: size }, () => Array(size).fill(null));
-      }
+    }
       
       // Places a ship with the head at the coordinate, oriented either vertically or horizontally
-      placeShip(ship, coordinates, orientation) {
+    placeShip(ship, coordinates, orientation) {
         const occupiedCoordinates = [];
         for (let i = 0; i < ship.length; i++) {
             occupiedCoordinates.push({
@@ -37,26 +37,29 @@ class Gameboard {
         if (overlap)
             throw new Error('Ship placement overlaps with another ship.');
 
-        occupiedCoordinates.forEach(coord => {
-            this.grid[coord.y][coord.x] = ship; // Storing the reference
+        occupiedCoordinates.forEach((coord, index) => {
+            this.grid[coord.y][coord.x] = {ship, index}; // Storing the reference
         });
 
         this.ships.push({
             ship,
             coordinates: occupiedCoordinates,
         });
-      }
+    }
       
       // Determined whether or not an attack hits a ship, sends the hit function to the corresponding ship
       // If missed, records the coordinates of the missed shot
-      receiveAttack(coordinates) {
-        // todo
-      }
-      
-      // Basically checks 
-      allShipsSunk() {
-        // todo
-      }
+    receiveAttack(coordinates) {
+        const target = this.grid[coordinates.y][coordinates.x];
+        if (target)
+            target.ship.hit(target.index);
+        else
+            this.missedAttacks.push({ x: coordinates.x, y: coordinates.y });
+    }
+    
+    allShipsSunk() {
+        return this.ships.every(shipObject => shipObject.ship.isSunk());
+    }
 }
 
 export default Gameboard;
