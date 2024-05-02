@@ -31,5 +31,5 @@ Battleship is a strategic game where the objective is to destroy your opponent's
 
 ## How to Play
 
-You can play my rendition of battleship at the following [link](drkchu.github.io/battleship). Make sure that you place all your ships first before attempting to sink your opponents battleship!
+You can play my rendition of battleship at the following [link](https://drkchu.github.io/battleship). Make sure that you place all your ships first before attempting to sink your opponents battleship!
 
