@@ -11,7 +11,7 @@ function setupBoard(gameboard, elementId, isHuman) {
     for (let y = 0; y < gameboard.grid.length; y++) {
         for (let x = 0; x < gameboard.grid.length; x++) {
             const cell = document.createElement('div');
-            cell.className = 'cell'; // Add a class for styling
+            cell.className = 'cell';
             cell.dataset.x = x;
             cell.dataset.y = y;
 
