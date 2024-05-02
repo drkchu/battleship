@@ -1,3 +1,90 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-bg-color: #f0f0f0;
+  --board-bg-color: rgba(34, 159, 237, 0.5);
+  --cell-highlight-color: #b0c4de;
+  --hit-color: red;
+  --miss-color: darkgrey;
+  --sunk-color: darkred;
+  --text-color: black;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  background: url("../assets/img/ocean.gif") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-bg-color);
+}
+
+.gameboard {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-gap: 2px;
+  background-color: var(--board-bg-color);
+}
+
+.gameboard > div {
+  width: 30px;
+  height: 30px;
+  background-color: #b0c4de;
+  border: 1px solid #fff;
+}
+
+#gameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+  background-color: var(--board-bg-color);
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
+
+.gameboard {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-gap: 2px;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  background-color: #b0c4de;
+  border: 1px solid #fff;
+}
+
+.cell.ship {
+  background-color: green;
+}
+
+.cell.hit {
+  background-color: var(--hit-color);
+}
+
+.cell.miss {
+  background-color:  var(--miss-color);
+}
+
+.cell.sunk {
+  background-color:  var(--sunk-color);
+}
+
+h2 {
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: bold;
+}

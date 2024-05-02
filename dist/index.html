@@ -1,11 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Derek's Battleship App</title>
-<link rel="icon" href="ship.png"><script defer src="main.js"></script></head>
-<body>
-    <h1 class="text-4xl">This is working</h1>
-</body>
+  <link rel="icon" href="ship.png"><script defer src="main.js"></script></head>
+  <body>
+    <div id="gameContainer">
+      <div class="board-container">
+        <h2>Player</h2>
+        <div id="playerBoard" class="gameboard"></div>
+      </div>
+      <div class="board-container">
+        <h2>Computer</h2>
+        <div id="computerBoard" class="gameboard"></div>
+      </div>
+    </div>
+
+    <div id="controls">
+      <label for="shipSize">Select Ship Size:</label>
+      <select id="shipSize">
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+      </select>
+
+      <label for="orientation">Select Orientation:</label>
+      <select id="orientation">
+        <option value="horizontal">Horizontal</option>
+        <option value="vertical">Vertical</option>
+      </select>
+
+      <button onclick="placeShip()">Place Ship</button>
+    </div>
+    <div id="instructions">
+      Click on the board to place your selected ship at the desired location.
+    </div>
+  </body>
 </html>
